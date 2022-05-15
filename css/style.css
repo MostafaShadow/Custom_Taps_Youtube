@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --border_radius: 20px;
+}
+body {
+  background-color: #0a1929;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@media (max-width: 400px) {
+  .app {
+    width: 95vw;
+    margin: auto;
+  }
+}
+
+.app .tabs {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.app .tabs .tabs_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%), 0 0 3px 0 rgb(0 0 0 / 10%);
+  padding: 10px;
+  border-radius: var(--border_radius);
+  margin: 10px 0px;
+}
+
+.app .tabs .tabs_header button {
+  padding: 10px 20px;
+  border-radius: var(--border_radius);
+  cursor: pointer;
+  background: initial;
+  border: none;
+  outline-width: 0;
+  color: inherit;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.app .tabs .tabs_header button.active {
+  background: #2a61d8;
+}
+
+.app .tabs .tabs_body {
+  padding: 20px;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.11);
+  border-radius: var(--border_radius);
+}
+
+.app .tabs .tabs_body .tab_content {
+  display: none;
+}
+
+.app .tabs .tabs_body .tab_content.active {
+  display: block;
+}
+.app .tabs .tabs_body .tab_content .title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.app .tabs .tabs_body .tab_content .text {
+  font-size: 14px;
+  line-height: 1.3;
+}
